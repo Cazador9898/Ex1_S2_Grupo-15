@@ -17,10 +17,10 @@ public class Cliente {
     private String Domicilio;
     private String Comuna;
     private double Telefono;
-    private String CuentaCorriente;
+    private CuentaCorriente cuentaCorriente;
     private double Saldo;
 
-    public Cliente(String Rut, String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, double Telefono, String CuentaCorriente, double Saldo) {
+    public Cliente(String Rut, String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, double Telefono, CuentaCorriente cuentaCorriente, double Saldo) {
         this.Rut = Rut;
         this.Nombre = Nombre;
         this.ApellidoPaterno = ApellidoPaterno;
@@ -28,7 +28,7 @@ public class Cliente {
         this.Domicilio = Domicilio;
         this.Comuna = Comuna;
         this.Telefono = Telefono;
-        this.CuentaCorriente = CuentaCorriente;
+        this.cuentaCorriente= cuentaCorriente;
         this.Saldo = Saldo;
     }
 
@@ -60,8 +60,8 @@ public class Cliente {
         return Telefono;
     }
 
-    public String getCuentaCorriente() {
-        return CuentaCorriente;
+    public CuentaCorriente getCuentaCorriente() {
+        return cuentaCorriente;
     }
 
     public double getSaldo() {
@@ -96,8 +96,8 @@ public class Cliente {
         this.Telefono = Telefono;
     }
 
-    public void setCuentaCorriente(String CuentaCorriente) {
-        this.CuentaCorriente = CuentaCorriente;
+    public void setCuentaCorriente( CuentaCorriente cuenta ) {
+        this.cuenta = cuentaCorriente;
     }
 
     public void setSaldo(double Saldo) {

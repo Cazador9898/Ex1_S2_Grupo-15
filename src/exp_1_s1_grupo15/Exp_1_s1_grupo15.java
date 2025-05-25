@@ -19,7 +19,10 @@ public class Exp_1_s1_grupo15 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
+        ArrayList<Cliente> clientes = new ArrayList<>();
         
+        Cliente ClienteEncontrado = null;
+        String rutBuscado = "";
         int opcion;
         
         
@@ -28,13 +31,13 @@ public class Exp_1_s1_grupo15 {
         
         System.out.println("Bienvenido al Banco BBK");
         System.out.println("Por Favor seleccione que le Gustaria hacer en su cuenta");
-        System.out.println("1.- Depositar dinero a su cuenta");
-        System.out.println("2.- Girar dinero de su cuenta");
+        System.out.println("1.- Depositar dinero");
+        System.out.println("2.- Girar dinero");
         System.out.println("3.- Consulta de Saldo");
         System.out.println("4.- Visualizar sus datos personales");
-        System.out.println("5.- Registrar nuevo usuario a su cuenta");
+        System.out.println("5.- Registrar nuevo usuario");
         System.out.println("6.- Salir");
-        System.out.println("Por Favor Selecciones una opcion");
+        System.out.println("Por Favor Selecciones una opcion del 1 al 6");
         opcion = sc.nextInt();
         sc.nextLine();
             
@@ -42,29 +45,44 @@ public class Exp_1_s1_grupo15 {
             switch (opcion){
                 
                 case 1:
-                    System.out.println("Revisando el estado de la cuenta para el Deposito");
-                    System.out.println("");
+                    System.out.println("Ingrese su RUT con puntos y guion.");
+                    rutBuscado = sc.nextLine();
+                    ClienteEncontrado = buscarCliente(clientes, rutBuscado);
                     
+                    
+                    if (ClienteEncontrado != null){
+                    ClienteEncontrado.getCuentaCorriente().depositar(sc);
+            }else{
+                   System.out.println("ciente no registrado");
+                    }
                     break;
-                    
+                                  
                 case 2:
-                    System.out.println("Revisando el estado de la cuenta para el Giro");
-                    System.out.println("");
+                    System.out.println("Ingrese su RUT con puntos y guion.");
+                    rutBuscado = sc.nextLine();
+                    ClienteEncontrado = buscarCliente(clientes, rutBuscado);
                     
-                    
+                   if (ClienteEncontrado != null){
+                    ClienteEncontrado.getCuentaCorriente().girar(sc);
+            }else{
+                   System.out.println("ciente no registrado");
+                    }
                     break;
                     
                 case 3:
-                    System.out.println("Revisando estado de cuenta...");
-                    System.out.println("");
+                    System.out.println("Ingrese su RUT con puntos y guion.");
+                    rutBuscado = sc.nextLine();
+                    ClienteEncontrado = buscarCliente(clientes, rutBuscado);
                     
+                   if (ClienteEncontrado != null){
+                    ClienteEncontrado.getCuentaCorriente().consultarSaldo(sc);
+            }else{
+                   System.out.println("ciente no registrado");
+                    }
                     break;
-                    
                 case 4:
-                    System.out.println("Mostrando datos personales de su cuenta");
-                    System.out.println("");
                     
-                    break;
+                    
                     
                 case 5:
                     System.out.println("Bienbenido al menu de registro de nuevo Usuario");
@@ -87,13 +105,14 @@ public class Exp_1_s1_grupo15 {
             
         }while (opcion !=6);
         
-
-        
-        
-        
-        
-        
-        
     }
     
+        public static Cliente buscarCliente(ArrayList<Cliente> clientes, String rutBuscado) {
+        for (Cliente c : clientes) {
+            if (c.getRut().equals(rutBuscado)) {
+                return c;
+            }
+        }
+        return null;
+    }
 }
