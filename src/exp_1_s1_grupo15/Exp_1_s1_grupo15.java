@@ -64,7 +64,7 @@ public class Exp_1_s1_grupo15 {
                      
                      
                      do{
-                          System.out.println("1.- Depositar dinero");
+                          System.out.println("\n 1.- Depositar dinero");
                           System.out.println("2.- Girar dinero");
                           System.out.println("3.- Consulta de Saldo");
                           System.out.println("4.- Visualizar sus datos personales");
@@ -98,7 +98,7 @@ public class Exp_1_s1_grupo15 {
                                   break;
                     
                             case 4:
-                                System.out.println("Mostrando Datos Personales");
+                                System.out.println("\n Mostrando Datos Personales");
                                 System.out.println("RUT:"+ClienteActual.getRut());
                                 System.out.println("Numbre:"+ClienteActual.getNombre());
                                 System.out.println("Apellido Paterno:"+ClienteActual.getApellidoPaterno());
@@ -107,8 +107,7 @@ public class Exp_1_s1_grupo15 {
                                 System.out.println("Comuna:"+ClienteActual.getComuna());
                                 System.out.println("Telefono: +56"+ClienteActual.getTelefono());
                                 System.out.println("Numero de cuenta Corriente:"+ClienteActual.getCuenta().getNumeroCuenta());
-                                System.out.println("Numero de cuenta invalido, debe tener 9 digitos");
-                                 System.out.println("Saldo en la cuenta :"+ClienteActual.getCuenta().getSaldo());
+                                System.out.println("Saldo en la cuenta :"+ClienteActual.getCuenta().getSaldo());
                     
                                 break;
 
@@ -132,9 +131,9 @@ public class Exp_1_s1_grupo15 {
                 case 2:
                     
                     
-                            System.out.println("Gracias por eleginor y registrarse en nuestro Bnaco BBK");
+                            System.out.println("Gracias por eleginos y registrarse en nuestro Bnaco BBK");
                             System.out.println("\n A continuacion le pediremos una serie de datos, por favor rellenarlos lo mejor podible");
-                            System.out.println("Por Favor ingrese su Rut con puntos y con Guion, Ejemplo (11.222.333-4)");
+                            System.out.println("\n Por Favor ingrese su Rut con puntos y con Guion, Ejemplo (11.222.333-4)");
                             String rut = sc.nextLine();
                             if (rut.length() < 11 || rut.length() > 12){
                                 System.out.println("RUT invalido debe ingresar entre 11 y 12 caracteres (incluyendo punto y guion)");
