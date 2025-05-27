@@ -25,15 +25,7 @@ public class Exp_1_s1_grupo15 {
         int opcion;
         int opcion1;
        
-        
-      
-        Cliente Nuevo1 = new Cliente("18.526.852-8","Nuevo","Apellido Paterno","Apellido Materno","Mi casa","hause",963524152,528961456,0,753159852);
-        
-        
-       clientes.add(Nuevo1);
-       
-       Cliente ClienteActual = null;
-        
+           
   
         do{
             
@@ -52,7 +44,11 @@ public class Exp_1_s1_grupo15 {
                     System.out.println("Ingrese su RUT con puntos y guion.");
                     String rutBuscado = sc.nextLine();
                     
-                    ClienteActual=null;
+                    if (rutBuscado.length()< 11 || rutBuscado.length() > 12){
+                        System.out.println("--RUT invalido. debe tener entre 11 y 12 caracteres (inlcuyendo puntos y guion.)");
+                    }
+                    
+                    Cliente ClienteActual=null;
                     for (Cliente c : clientes){
                         if(c.getRut().equals(rutBuscado)){
                             ClienteActual = c;
@@ -63,7 +59,7 @@ public class Exp_1_s1_grupo15 {
                     
                     
                     if (ClienteActual != null){
-                     System.out.println("Bienvenido Nuevamente "+Nuevo1.getNombre()+"al Banco BBK");
+                     System.out.println("Bienvenido Nuevamente "+ ClienteActual.getNombre() +" al Banco BBK");
                      System.out.println("¿Que le gustaria Hacer Hoy?");
                      
                      
@@ -82,48 +78,51 @@ public class Exp_1_s1_grupo15 {
                 
                             case 1:
                     
-                                Nuevo1.depositar(sc);
- 
-                             break;
+                                System.out.println("Ingrese monto a depositar");
+                                    int monto = sc.nextInt();
+                                    sc.nextLine();
+                                    ClienteActual.getCuenta().depositar(monto);
+                                
+                              break;
                                   
                             case 2:
 
-                                Nuevo1.girar(sc);
-         
-                             break;
+                                System.out.println("Ingrese monto a girar");
+                                    int montoGiro = sc.nextInt();
+                                    sc.nextLine();
+                                    ClienteActual.getCuenta().girar(montoGiro);
+                                    break;
                     
                             case 3:
-
-                                Nuevo1.consultarSaldo(sc);
-         
-                                break;
+                                  ClienteActual.getCuenta().consultarSaldo();
+                                  break;
                     
                             case 4:
                                 System.out.println("Mostrando Datos Personales");
-                                System.out.println("RUT:"+Nuevo1.getRut());
-                                System.out.println("Numbre:"+Nuevo1.getNombre());
-                                System.out.println("Apellido Paterno:"+Nuevo1.getApellidoPaterno());
-                                System.out.println("Apellido Materno:"+Nuevo1.getApellidoMaterno());
-                                System.out.println("Domicilio:"+Nuevo1.getDomicilio());
-                                System.out.println("Comuna:"+Nuevo1.getComuna());
-                                System.out.println("Telefono: +56"+Nuevo1.getTelefono());
-                                System.out.println("Numero de cuenta Corriente:"+Nuevo1.getNumeroCuenta());
-                                System.out.println("Saldo en la cuenta :"+Nuevo1.getSaldo());
+                                System.out.println("RUT:"+ClienteActual.getRut());
+                                System.out.println("Numbre:"+ClienteActual.getNombre());
+                                System.out.println("Apellido Paterno:"+ClienteActual.getApellidoPaterno());
+                                System.out.println("Apellido Materno:"+ClienteActual.getApellidoMaterno());
+                                System.out.println("Domicilio:"+ClienteActual.getDomicilio());
+                                System.out.println("Comuna:"+ClienteActual.getComuna());
+                                System.out.println("Telefono: +56"+ClienteActual.getTelefono());
+                                System.out.println("Numero de cuenta Corriente:"+ClienteActual.getCuenta().getNumeroCuenta());
+                                System.out.println("Numero de cuenta invalido, debe tener 9 digitos");
+                                 System.out.println("Saldo en la cuenta :"+ClienteActual.getCuenta().getSaldo());
                     
                                 break;
-       
+
                             case 5:
                                     System.out.println("Gracias por usar nuestros servicios del banco BBK");
                                     System.out.println("Por Favor vuelva pronto");
-                    
-                                 break;
+                                break;
                     
                             default:
                                     System.out.println("Opcion Invalida");
-      
-                          }
                          
-                     }while (opcion !=5);
+}
+                         
+                     } while (opcion !=5);
      
             }else{
                    System.out.println("Ingrese un Rut Valido o usted no es un ciente registrado");
@@ -132,31 +131,40 @@ public class Exp_1_s1_grupo15 {
     
                 case 2:
                     
-                   
-                 
-                    clientes.add(Nuevo1);
+                    
                             System.out.println("Gracias por eleginor y registrarse en nuestro Bnaco BBK");
-                            System.out.println("A continuacion le pediremos una serie de datos, por favor rellenarlos lo mejor podible");
+                            System.out.println("\n A continuacion le pediremos una serie de datos, por favor rellenarlos lo mejor podible");
                             System.out.println("Por Favor ingrese su Rut con puntos y con Guion, Ejemplo (11.222.333-4)");
-                            Nuevo1.setRut(sc.next());
+                            String rut = sc.nextLine();
+                            if (rut.length() < 11 || rut.length() > 12){
+                                System.out.println("RUT invalido debe ingresar entre 11 y 12 caracteres (incluyendo punto y guion)");
+                            break;
+                            }
                             System.out.println("Por Favor Ingrese su nombre");
-                            Nuevo1.setNombre(sc.next());
+                            String nombre = sc.nextLine();
                             System.out.println("Por Favor Ingrese su Apellido Paterno");
-                            Nuevo1.setApellidoPaterno(sc.next());
+                            String apPaterno = sc.nextLine();
                             System.out.println("Por Favor Ingrese su Apellido Materno");
-                            Nuevo1.setApellidoMaterno(sc.next());
+                            String apMaterno = sc.nextLine();
                             System.out.println("Por Favor Ingrese su Domicilio");
-                            Nuevo1.setDomicilio(sc.next());
+                            String domicilio = sc.nextLine();
                             System.out.println("Por Favor Ingrese su Comuna");
-                            Nuevo1.setComuna(sc.next());
+                            String comuna = sc.nextLine();
                             System.out.println("Por Favor ingrese su numero de telefono, tenga en cuenta que el +56 ya esta asignado");
-                            Nuevo1.setTelefono(sc.nextInt());
-                            int NumeroCuetna =(int)(Math.random()*900000000)+100000000;
-                            Nuevo1.setNumeroCuenta(NumeroCuetna);
-        
-                    System.out.println("Muchas gracias por su registro");
-                    System.out.println("Su nuevo numero de cuenta es"+Nuevo1.getNumeroCuenta());
-                    System.out.println("Ahora puede iniciar secion en nuetro banca en Linea para realizar las transacciones que necesites");
+                            int telefono = sc.nextInt();
+                            sc.nextLine();
+                            
+                            CuentaCorriente cuenta = new CuentaCorriente();
+                            Cliente nuevoCliente = new Cliente(rut, nombre, apPaterno, apMaterno, domicilio, comuna, telefono, cuenta);
+
+                            clientes.add(nuevoCliente);
+                            
+                            ClienteActual = nuevoCliente;
+                                    
+                                    
+                    System.out.println("\nMuchas gracias por su registro");
+                    System.out.println("Su nuevo numero de cuenta es: "+ nuevoCliente.getCuenta().getNumeroCuenta());
+                    System.out.println("\nAhora puede iniciar secion en nuetro banca en Linea para realizar las transacciones que necesites");
                     
                     break;
                     
@@ -168,14 +176,9 @@ public class Exp_1_s1_grupo15 {
                     
                 default:
                     System.out.println("Opcion Invalida");
-     
-                
             }
-    
         }while (opcion1 !=3);
-        
-    }
-    
+        }    
         public static Cliente buscarCliente(ArrayList<Cliente> clientes, String rutBuscado) {
         for (Cliente c : clientes) {
             if (c.getRut().equalsIgnoreCase(rutBuscado)) {
