@@ -4,6 +4,9 @@
  */
 package exp_1_s1_grupo15;
 import exp_1_s1_grupo15.Cliente;
+import exp_1_s1_grupo15.CuentaCorriente;
+import exp_1_s1_grupo15.CuentaDeAhorro;
+import exp_1_s1_grupo15.CuentaDeCredito;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -154,7 +157,7 @@ public class Exp_1_s1_grupo15 {
                             sc.nextLine();
                             
                             CuentaCorriente cuenta = new CuentaCorriente();
-                            Cliente nuevoCliente = new Cliente(rut, nombre, apPaterno, apMaterno, domicilio, comuna, telefono, cuenta);
+                            Cliente nuevoCliente = new CuentaCorriente(rut, nombre, apPaterno, apMaterno, domicilio, comuna, telefono, cuenta);
 
                             clientes.add(nuevoCliente);
                             

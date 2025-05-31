@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author wdiazc
  */
-public class Cliente {
+abstract class Cliente {
     
     private String Rut;
     private String Nombre;

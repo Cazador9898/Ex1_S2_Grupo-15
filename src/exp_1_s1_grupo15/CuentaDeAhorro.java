@@ -4,31 +4,28 @@
  */
 package exp_1_s1_grupo15;
 
-import java.util.Scanner;
-
 /**
  *
- * @author wdiazc
+ * @author guzma
  */
-public class CuentaCorriente extends Cliente{
-    
-    private int numeroCuenta;
-    private int saldo;
+public class CuentaDeAhorro extends Cliente{
+    private int numeroCuentaAhorro;
+    private int saldoAhorro;
 
-    public CuentaCorriente(int numeroCuenta, int saldo, String Rut, String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, int Telefono, CuentaCorriente cuentaCorriente) {
+    public CuentaDeAhorro(int numeroCuentaAhorro, int saldoAhorro, String Rut, String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, int Telefono, CuentaCorriente cuentaCorriente) {
         super(Rut, Nombre, ApellidoPaterno, ApellidoMaterno, Domicilio, Comuna, Telefono, cuentaCorriente);
-        this.numeroCuenta = numeroCuenta;
-        this.saldo = saldo;
+        this.numeroCuentaAhorro = numeroCuentaAhorro;
+        this.saldoAhorro = saldoAhorro;
     }
 
-   
+
     
         
             public void depositar ( int monto) {
      if (monto > 0){
-     saldo += monto;
+     saldoAhorro += monto;
          System.out.println("¡Deposito realizado de manera exitosa!");
-         System.out.println("¡Saldo Actual: $" + saldo +"pesos.");
+         System.out.println("¡Saldo Actual: $" + saldoAhorro +"pesos.");
      }else{
          System.out.println("El monto debe ser mayor a 0.");
      }
@@ -38,27 +35,25 @@ public class CuentaCorriente extends Cliente{
     public void girar (int monto){
         if (monto <= 0){
             System.out.println("EL monto debe ser mayor a cero");
-        }else if (monto > saldo) {
+        }else if (monto > saldoAhorro) {
             System.out.println("Fondos insuficientes");
 } else{
-            saldo -= monto;
+            saldoAhorro -= monto;
             System.out.println("¡Giro realizado de manera exitosa!");
-            System.out.println("Saldo Actual: $"+ saldo + "pesos");
+            System.out.println("Saldo Actual: $"+ saldoAhorro + "pesos");
         }
 }
           
     public void consultarSaldo (){
-        System.out.println("Saldo Actual: $" + saldo + "pesos.");
+        System.out.println("Saldo Actual: $" + saldoAhorro + "pesos.");
     
     }
     public int getNumeroCuenta(){
-        return numeroCuenta;
+        return numeroCuentaAhorro;
     }
     public int getSaldo(){
-    return saldo;
+    return saldoAhorro;
     }
 }
-
-    
     
 
