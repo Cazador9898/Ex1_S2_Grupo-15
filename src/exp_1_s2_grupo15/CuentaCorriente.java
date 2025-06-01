@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package exp_1_s1_grupo15;
+package exp_1_s2_grupo15;
 
 import java.util.Scanner;
 
@@ -10,21 +10,10 @@ import java.util.Scanner;
  *
  * @author wdiazc
  */
-public class CuentaCorriente extends Cliente{
+public class CuentaCorriente extends CuentaBancaria{
     
-    private int numeroCuenta;
-    private int saldo;
-
-    public CuentaCorriente(int numeroCuenta, int saldo, String Rut, String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, int Telefono, CuentaCorriente cuentaCorriente) {
-        super(Rut, Nombre, ApellidoPaterno, ApellidoMaterno, Domicilio, Comuna, Telefono, cuentaCorriente);
-        this.numeroCuenta = numeroCuenta;
-        this.saldo = saldo;
-    }
-
-   
-    
-        
-            public void depositar ( int monto) {
+    @Override
+    public void depositar ( int monto) {
      if (monto > 0){
      saldo += monto;
          System.out.println("¡Deposito realizado de manera exitosa!");
@@ -34,7 +23,7 @@ public class CuentaCorriente extends Cliente{
      }
 }
 
-
+    @Override
     public void girar (int monto){
         if (monto <= 0){
             System.out.println("EL monto debe ser mayor a cero");
@@ -46,16 +35,10 @@ public class CuentaCorriente extends Cliente{
             System.out.println("Saldo Actual: $"+ saldo + "pesos");
         }
 }
-          
+     @Override     
     public void consultarSaldo (){
         System.out.println("Saldo Actual: $" + saldo + "pesos.");
     
-    }
-    public int getNumeroCuenta(){
-        return numeroCuenta;
-    }
-    public int getSaldo(){
-    return saldo;
     }
 }
 
