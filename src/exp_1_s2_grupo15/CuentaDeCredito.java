@@ -24,11 +24,13 @@ private int limiteCredito = 1500000;
 
     @Override
     public void girar (int monto){
-        if (monto > 0 && (saldo + limiteCredito) >= monto){
-            saldo -= monto;
-            System.out.println("Giro exitoso. Saldo: $" + saldo);
-        }else {
+        if (monto <= 0){
+            System.out.println("El monto debe ser mayor a cero");
+        }else if ((saldo - monto) < -limiteCredito){
             System.out.println("Excede el limite de crédito");
+        }else {
+        saldo -= monto;
+        System.out.println("Giro exitoso. Saldo: $" + saldo);
         }
 }
      @Override     
