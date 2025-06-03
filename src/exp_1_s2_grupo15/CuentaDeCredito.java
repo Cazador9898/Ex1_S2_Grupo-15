@@ -9,8 +9,18 @@ package exp_1_s2_grupo15;
  * @author guzma
  */
 public class CuentaDeCredito extends CuentaBancaria{
+    
 private int limiteCredito = 1500000;
     
+public CuentaDeCredito(){
+super();
+this.saldo = 1500000;
+}
+
+public CuentaDeCredito (int numeroCuenta, int saldo){
+super(numeroCuenta, saldo);
+}
+
     @Override
     public void depositar ( int monto) {
      if (monto > 0){

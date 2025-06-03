@@ -61,6 +61,7 @@ public class Exp_1_s2_grupo15 {
                     }
                     
                     
+                    
                     if (ClienteActual != null){
                      System.out.println("Bienvenido Nuevamente "+ ClienteActual.getNombre() +" al Banco BBK");
                      System.out.println("¿Que le gustaria Hacer Hoy?");
@@ -101,16 +102,7 @@ public class Exp_1_s2_grupo15 {
                                   break;
                     
                             case 4:
-                                System.out.println("\n Mostrando Datos Personales");
-                                System.out.println("RUT:"+ClienteActual.getRut());
-                                System.out.println("Numbre:"+ClienteActual.getNombre());
-                                System.out.println("Apellido Paterno:"+ClienteActual.getApellidoPaterno());
-                                System.out.println("Apellido Materno:"+ClienteActual.getApellidoMaterno());
-                                System.out.println("Domicilio:"+ClienteActual.getDomicilio());
-                                System.out.println("Comuna:"+ClienteActual.getComuna());
-                                System.out.println("Telefono: +56"+ClienteActual.getTelefono());
-                                System.out.println("Numero de cuenta :"+ClienteActual.getCuentaBancaria().getNumeroCuenta());
-                                System.out.println("Saldo en la cuenta :"+ClienteActual.getCuentaBancaria().getSaldo());
+                                ClienteActual.mostrarDatos();
                     
                                 break;
 

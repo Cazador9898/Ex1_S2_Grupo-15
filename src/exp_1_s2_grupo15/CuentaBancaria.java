@@ -18,6 +18,12 @@ public abstract class CuentaBancaria {
     this.saldo = 0;
     }
     
+    public CuentaBancaria (int numeroCuenta, int saldo){
+    this.numeroCuenta = numeroCuenta;
+    this.saldo = saldo;
+    
+    }
+    
     public int getNumeroCuenta(){
     return numeroCuenta;
     }

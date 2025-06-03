@@ -10,6 +10,14 @@ package exp_1_s2_grupo15;
  */
 public class CuentaDeAhorro extends CuentaBancaria{
 
+    public CuentaDeAhorro(){
+    super();
+    }
+    
+    public CuentaDeAhorro (int numeroCuenta, int saldo){
+    super(numeroCuenta, saldo);
+    }
+    
     @Override
     public void depositar ( int monto) {
      if (monto > 0){

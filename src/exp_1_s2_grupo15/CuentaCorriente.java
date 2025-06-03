@@ -12,6 +12,14 @@ import java.util.Scanner;
  */
 public class CuentaCorriente extends CuentaBancaria{
     
+    public CuentaCorriente(){
+    super();    
+    }
+    
+    public CuentaCorriente (int numeroCuenta, int saldo){
+    super(numeroCuenta, saldo);
+    }
+    
     @Override
     public void depositar ( int monto) {
      if (monto > 0){

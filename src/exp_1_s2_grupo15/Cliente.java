@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author wdiazc
  */
-public class Cliente {
+public class Cliente implements MostrarInformacion {
     
     private String Rut;
     private String Nombre;
@@ -32,6 +32,22 @@ public class Cliente {
         this.cuenta = cuenta;
     }
 
+    @Override
+    public void mostrarDatos(){
+        System.out.println("\nMostrando datos Personales");
+        System.out.println("RUT: " + Rut);
+        System.out.println("Nombre: " + Nombre);
+        System.out.println("Apellido Paterno: "+ ApellidoPaterno);
+        System.out.println("Apellido Materno: "+ ApellidoMaterno);
+        System.out.println("Domicilio: "+ Domicilio);
+        System.out.println("Comuna: " + Comuna);
+        System.out.println(" Telefono: +56" + Telefono);
+        System.out.println("Numero de cuenta: " + cuenta.getNumeroCuenta());
+        System.out.println("Saldo en la Cuenta: $" + cuenta.getSaldo());
+    }
+    
+    
+    
     public void setRut(String Rut) {
         this.Rut = Rut;
     }
