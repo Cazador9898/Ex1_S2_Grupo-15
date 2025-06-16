@@ -16,14 +16,16 @@ public class Usuario {
     private String Domicilio;
     private String Comuna;
     private int Telefono;
+    private String Rut;
 
-    public Usuario(String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, int Telefono) {
+    public Usuario(String Nombre, String ApellidoPaterno, String ApellidoMaterno, String Domicilio, String Comuna, int Telefono, String Rut) {
         this.Nombre = Nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
         this.Domicilio = Domicilio;
         this.Comuna = Comuna;
         this.Telefono = Telefono;
+        this.Rut = Rut;
     }
 
     public String getNombre() {
@@ -73,7 +75,8 @@ public class Usuario {
     public void setTelefono(int Telefono) {
         this.Telefono = Telefono;
     }
-    
+    public void getRut(String Rut){
+    }
     
     
 }

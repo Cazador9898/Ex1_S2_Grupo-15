@@ -13,6 +13,41 @@ import java.util.ArrayList;
 public class ADMIN_BIBLIOTECA_GRUPO15 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Scanner sc = new Scanner(System.in);
+        Biblioteca miBiblioteca = new Biblioteca();
+        int opcion = 0;
+        
+        do{
+            System.out.println("--Bienvenido a la BIBLIOTECA DUOC UC");
+            System.out.println("1-. Registrar libro");
+            System.out.println("2-. Registrar Uruario");
+            System.out.println("3-. Buscar libro por nombre");
+            System.out.println("4-. Salir");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            
+            
+        switch (opcion){
+        
+            case 1:
+                miBiblioteca.registrarLibro(sc);
+                break;
+            case 2:
+                miBiblioteca.registrarUsuario(sc);
+                break;
+            case 3:
+                miBiblioteca.buscarLibro(sc);
+                break;
+            case 4:
+                System.out.println("Gracias por usar la BIBLIOTECA DUOC UC ");
+                break;
+          }
+    }while (opcion != 4);
+           
+        
+        
     }
+    
+    
+    
 }

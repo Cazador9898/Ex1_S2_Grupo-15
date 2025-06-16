@@ -8,63 +8,50 @@ import java.util.ArrayList;
  *
  * @author guzma
  */
-public abstract class Libros {
+public class Libros {
+ private String titulo;
+ private String autor;
+ private int anio;
+ private boolean prestado;
+
+    public Libros(String titulo, String autor, int anio, boolean prestado) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio = anio;
+        this.prestado = prestado;
+    }
+ 
+ public String getTitulo(){
+ return titulo;
+ }
     
-    private String Fantasia;
-    private String Accion;
-    private String Drama;
-    private String Romance;
-    private String Miedo;
-
-    public Libros(String Fantasia, String Accion, String Drama, String Romance, String Miedo) {
-        this.Fantasia = Fantasia;
-        this.Accion = Accion;
-        this.Drama = Drama;
-        this.Romance = Romance;
-        this.Miedo = Miedo;
-    }
-
-    public String getFantasia() {
-        return Fantasia;
-    }
-
-    public String getAccion() {
-        return Accion;
-    }
-
-    public String getDrama() {
-        return Drama;
-    }
-
-    public String getRomance() {
-        return Romance;
-    }
-
-    public String getMiedo() {
-        return Miedo;
-    }
-
-    public void setFantasia(String Fantasia) {
-        this.Fantasia = Fantasia;
-    }
-
-    public void setAccion(String Accion) {
-        this.Accion = Accion;
-    }
-
-    public void setDrama(String Drama) {
-        this.Drama = Drama;
-    }
-
-    public void setRomance(String Romance) {
-        this.Romance = Romance;
-    }
-
-    public void setMiedo(String Miedo) {
-        this.Miedo = Miedo;
-    }
-    
-    
-    
-    
+ public String getAutor(){
+return autor;
+}
+ 
+ public int getAnio(){
+ return anio;
+ }
+ 
+ public boolean isPrestado(){
+ return prestado;
+ }
+ 
+ public void prestar(){
+ prestado = true;
+ }
+ 
+ public void devolver(){
+prestado = false;
+}
+ 
+ @Override
+ public String toString(){
+ return "Titulo:" + titulo+
+         "\nAutor:" + autor +
+         "\nAño" + anio +
+         "\nEstado" + (prestado ? "Prestado" : "Disponible");
+ }
+ 
+ 
 }
