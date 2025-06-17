@@ -6,7 +6,8 @@ package com.mycompany.admin_biblioteca_grupo15;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
-
+import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
+import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
 
 /**
  *
@@ -117,14 +118,26 @@ public class Biblioteca {
             System.out.println("Libro no encontrado en la biblioteca");
         
         }
-        public void prestarLibro(String titulo) throws LibroNoEncontradoException, LibroYaPrestadoException{
-        Libros libro = buscarLibroPorTitulo(titulo);
-        if (libro.isPrestado()){
-        throw new LibroYaPrestadoException ("Libro prestado");
         }
-        libro.setPrestado(true);
+        public void prestarLibro(String titulo) throws LibroNoEncontradoException, LibroYaPrestadoException {
+        boolean encontrado = false;
+        
+        for (Libros libro : listaLibros){
+                if(libro.getTitulo().equalsIgnoreCase(titulo)){
+        encontrado = true;
+        
+        if (libro.isPrestado()){
+        throw new LibroYaPrestadoException("El Libro" + titulo + "Ya esta ocupado");
+        }else {
+        libro.prestar();
+            System.out.println("Libro" + titulo + "prestado con exito");
         }
         
         }
-    
+            
+       }
+        if (!encontrado){
+        throw new LibroNoEncontradoException ("El Libro" + titulo + "no existe en la biblioteca");
+}
+}
 }

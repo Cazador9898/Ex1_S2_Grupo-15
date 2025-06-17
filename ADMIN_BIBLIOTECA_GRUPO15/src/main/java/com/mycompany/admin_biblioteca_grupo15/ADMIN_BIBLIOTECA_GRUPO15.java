@@ -5,7 +5,8 @@
 package com.mycompany.admin_biblioteca_grupo15;
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
+import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
 /**
  *
  * @author guzma
