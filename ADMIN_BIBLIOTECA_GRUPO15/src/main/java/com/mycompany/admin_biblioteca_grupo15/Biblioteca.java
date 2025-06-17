@@ -117,6 +117,14 @@ public class Biblioteca {
             System.out.println("Libro no encontrado en la biblioteca");
         
         }
+        public void prestarLibro(String titulo) throws LibroNoEncontradoException, LibroYaPrestadoException{
+        Libros libro = buscarLibroPorTitulo(titulo);
+        if (libro.isPrestado()){
+        throw new LibroYaPrestadoException ("Libro prestado");
+        }
+        libro.setPrestado(true);
+        }
+        
         }
     
 }

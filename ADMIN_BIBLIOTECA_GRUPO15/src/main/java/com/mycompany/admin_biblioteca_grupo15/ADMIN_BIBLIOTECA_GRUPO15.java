@@ -22,7 +22,8 @@ public class ADMIN_BIBLIOTECA_GRUPO15 {
             System.out.println("1-. Registrar libro");
             System.out.println("2-. Registrar Uruario");
             System.out.println("3-. Buscar libro por nombre");
-            System.out.println("4-. Salir");
+            System.out.println("4-. Prestar libro");
+            System.out.println("5-. Salir");
             opcion = sc.nextInt();
             sc.nextLine();
             
@@ -39,6 +40,17 @@ public class ADMIN_BIBLIOTECA_GRUPO15 {
                 miBiblioteca.buscarLibro(sc);
                 break;
             case 4:
+                try{
+                    System.out.println("Indica el nombre del libro que deseas");
+                    String titulo = sc.nextLine();
+                    miBiblioteca.prestarLibro(titulo);                
+                } catch (LibroNoEncontradoException e){
+                    System.out.println("Lo siento" + e.getMessage());
+                }catch (LibroYaPrestadoException e){
+                    System.out.println("Lo siento" + e.getMessage());
+                }
+                break;                
+            case 5:    
                 System.out.println("Gracias por usar la BIBLIOTECA DUOC UC ");
                 break;
           }
