@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
 import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
-
+import java.util.HashMap;
 /**
  *
  * @author guzma
@@ -16,11 +16,11 @@ import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
 public class Biblioteca {
 
     private ArrayList<Libros> listaLibros;
-    private ArrayList<Usuario> listaUsuarios;
+    private HashMap< String, Usuario> mapaUsuario = new HashMap<>();
     
     public Biblioteca (){
     listaLibros = new ArrayList<>();
-    listaUsuarios = new ArrayList<>();
+    
       }
     
     //Registro de libros
@@ -92,7 +92,7 @@ public class Biblioteca {
              
     
             Usuario nuevoUsuario = new Usuario( nombre, apellidoPaterno, apellidoMaterno, direccion, comuna, telefono, rut);
-            listaUsuarios.add(nuevoUsuario);
+            mapaUsuario.put(rut, nuevoUsuario);
             System.out.println("---USUARIO REGISTRADO CON EXITO");
             }
            //busqueda de libro

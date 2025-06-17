@@ -4,6 +4,7 @@
  */
 package com.mycompany.admin_biblioteca_grupo15;
 import java.util.ArrayList;
+
 /**
  *
  * @author guzma
@@ -18,7 +19,7 @@ public class Libros {
         this.titulo = titulo;
         this.autor = autor;
         this.anio = anio;
-        this.prestado = prestado;
+        this.prestado = false;
     }
  
  public String getTitulo(){

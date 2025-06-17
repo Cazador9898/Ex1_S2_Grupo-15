@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
 import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
+import java.util.HashMap;
 /**
  *
  * @author guzma
