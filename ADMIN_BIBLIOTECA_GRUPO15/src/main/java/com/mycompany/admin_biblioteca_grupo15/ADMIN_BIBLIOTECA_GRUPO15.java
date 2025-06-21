@@ -25,7 +25,9 @@ public class ADMIN_BIBLIOTECA_GRUPO15 {
             System.out.println("2-. Registrar Uruario");
             System.out.println("3-. Buscar libro por nombre");
             System.out.println("4-. Prestar libro");
-            System.out.println("5-. Salir");
+            System.out.println("5-. Lista de libros");
+            System.out.println("6-. Lista de usuarios activos");
+            System.out.println("7-. Salir");
             opcion = sc.nextInt();
             sc.nextLine();
             
@@ -53,8 +55,15 @@ public class ADMIN_BIBLIOTECA_GRUPO15 {
                 }
                 break;                
             case 5:    
-                System.out.println("Gracias por usar la BIBLIOTECA DUOC UC ");
+                miBiblioteca.ListaDeLibros(args);
                 break;
+            case 6:    
+                System.out.println("Los usuarios activos te pueden ayudar en lo que necesites ");
+                miBiblioteca.UsuariosActivos(args);
+                break;
+            case 7:    
+                System.out.println("Gracias por usar la BIBLIOTECA DUOC UC ");
+                break;    
           }
     }while (opcion != 4);
            

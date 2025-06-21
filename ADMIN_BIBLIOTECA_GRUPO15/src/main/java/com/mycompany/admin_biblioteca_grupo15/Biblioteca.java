@@ -4,6 +4,11 @@
  */
 package com.mycompany.admin_biblioteca_grupo15;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.List;
+import java.util.Set;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
@@ -23,6 +28,46 @@ public class Biblioteca {
     
       }
     
+    
+    
+        public void ListaDeLibros(String[] args){
+            
+            List<String> listaLibros1;
+        listaLibros1 = Arrays.asList("Los tres Chiflados","El Ticket Dorado","El arte de la guerra","Java para principiantes","Pedrisimo",
+                "El maravilloso mundo de Jack","La Niebla","Mundo Jurasico","Pepe y sus globos","La llamada de chutulu","Viaje al centro de la tierra");
+        
+                    List<String> listaLibros2;
+        listaLibros2 = Arrays.asList("El Vafabundo","Charly y la Fabrica de Chocolate","Todo en Crypto","Amor  primer Vista",
+                 "El viaje del mañana","El Gran Robo","Solo Leveling");
+        
+        
+        
+        Set<String> ListaFinal = new HashSet<>(listaLibros1);
+        ListaFinal.addAll(listaLibros2);
+        
+            System.out.println("Lista de los libros en la Biblioteca, recordar revisar si los libros estan disponibles son: "+ListaFinal.size());
+            for(String e:ListaFinal){
+                System.out.println(e);
+            }
+            
+
+        }
+        
+        public void UsuariosActivos (String[] args){
+            
+            Set<String> UsuariosActivos = new TreeSet<>();
+            UsuariosActivos.add("Yochua");
+            UsuariosActivos.add("Alex");
+            UsuariosActivos.add("MR.LIBROS");
+            UsuariosActivos.add("Juanin");
+            UsuariosActivos.add("Ouguro");
+            UsuariosActivos.add("Ochulu");
+            
+            UsuariosActivos.forEach(System.out::println);
+            
+        }
+        
+    
     //Registro de libros
         public void registrarLibro(Scanner sc){
             System.out.println("\n---Registro de Libro---");
@@ -39,6 +84,9 @@ public class Biblioteca {
             
             System.out.println("---LIBRO REGISTRADO CON EXITO");
         }
+        
+        
+        
 
             //Registro de Usurario
             
