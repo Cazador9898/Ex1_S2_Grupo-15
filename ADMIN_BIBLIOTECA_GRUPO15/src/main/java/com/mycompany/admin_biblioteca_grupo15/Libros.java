@@ -4,12 +4,12 @@
  */
 package com.mycompany.admin_biblioteca_grupo15;
 import java.util.ArrayList;
-
+import java.util.TreeSet;
 /**
  *
  * @author guzma
  */
-public class Libros {
+public class Libros implements Comparable<Libros> {
  private String titulo;
  private String autor;
  private int anio;
@@ -47,11 +47,9 @@ prestado = false;
 }
  
  @Override
- public String toString(){
- return "Titulo:" + titulo+
-         "\nAutor:" + autor +
-         "\nAño" + anio +
-         "\nEstado" + (prestado ? "Prestado" : "Disponible");
+ public int compareTo (Libros otroLibro){
+ return this.titulo.compareToIgnoreCase(otroLibro.getTitulo());
+
  }
  
  

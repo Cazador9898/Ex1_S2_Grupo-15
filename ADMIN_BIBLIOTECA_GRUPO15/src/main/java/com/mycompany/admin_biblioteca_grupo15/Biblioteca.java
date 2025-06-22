@@ -14,6 +14,9 @@ import java.util.InputMismatchException;
 import com.mycompany.admin_biblioteca_grupo15.LibroNoEncontradoException;
 import com.mycompany.admin_biblioteca_grupo15.LibroYaPrestadoException;
 import java.util.HashMap;
+
+
+
 /**
  *
  * @author guzma
@@ -22,6 +25,9 @@ public class Biblioteca {
 
     private ArrayList<Libros> listaLibros;
     private HashMap< String, Usuario> mapaUsuario = new HashMap<>();
+    private HashSet<Usuario> usuariosUnicos = new HashSet<>();
+    private TreeSet<Libros> catalogoOrdenado = new TreeSet<>();
+    
     
     public Biblioteca (){
     listaLibros = new ArrayList<>();
@@ -37,7 +43,7 @@ public class Biblioteca {
                 "El maravilloso mundo de Jack","La Niebla","Mundo Jurasico","Pepe y sus globos","La llamada de chutulu","Viaje al centro de la tierra");
         
                     List<String> listaLibros2;
-        listaLibros2 = Arrays.asList("El Vafabundo","Charly y la Fabrica de Chocolate","Todo en Crypto","Amor  primer Vista",
+        listaLibros2 = Arrays.asList("El Vagabundo","Charly y la Fabrica de Chocolate","Todo en Crypto","Amor  primer Vista",
                  "El viaje del mañana","El Gran Robo","Solo Leveling");
         
         
@@ -81,8 +87,9 @@ public class Biblioteca {
             
             Libros libroNuevo = new Libros (titulo, autor, anio, true);
             listaLibros.add(libroNuevo);
+            catalogoOrdenado.add(libroNuevo);
             
-            System.out.println("---LIBRO REGISTRADO CON EXITO");
+            System.out.println("---LIBRO REGISTRADO CON EXITO---");
         }
         
         
@@ -141,7 +148,8 @@ public class Biblioteca {
     
             Usuario nuevoUsuario = new Usuario( nombre, apellidoPaterno, apellidoMaterno, direccion, comuna, telefono, rut);
             mapaUsuario.put(rut, nuevoUsuario);
-            System.out.println("---USUARIO REGISTRADO CON EXITO");
+            usuariosUnicos.add(nuevoUsuario);
+            System.out.println("---USUARIO REGISTRADO CON EXITO---");
             }
            //busqueda de libro
         
@@ -188,4 +196,13 @@ public class Biblioteca {
         throw new LibroNoEncontradoException ("El Libro" + titulo + "no existe en la biblioteca");
 }
 }
+        public void mostrarUsuariosUnicos(){
+            System.out.println("\n---Lista de usuarios registrados---");
+            for (Usuario usuario : usuariosUnicos){
+                System.out.println(usuario.getNombre());
+            }
+        }
+        
+        
+        
 }
