@@ -20,7 +20,7 @@ public class ADMIN_BIBLIOTECA_GRUPO15 {
         int opcion = 0;
         
         do{
-            System.out.println("--Bienvenido a la BIBLIOTECA DUOC UC");
+            System.out.println("\n--Bienvenido a la BIBLIOTECA DUOC UC---");
             System.out.println("1-. Registrar libro");
             System.out.println("2-. Registrar Uruario");
             System.out.println("3-. Buscar libro por nombre");

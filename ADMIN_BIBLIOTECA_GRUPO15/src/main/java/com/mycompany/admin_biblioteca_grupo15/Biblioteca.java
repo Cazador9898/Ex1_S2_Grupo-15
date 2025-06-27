@@ -51,7 +51,7 @@ public class Biblioteca {
         Set<String> ListaFinal = new HashSet<>(listaLibros1);
         ListaFinal.addAll(listaLibros2);
         
-            System.out.println("Lista de los libros en la Biblioteca, recordar revisar si los libros estan disponibles son: "+ListaFinal.size());
+            System.out.println("Lista de los libros en la Biblioteca, los libros estan disponibles son: "+ListaFinal.size());
             for(String e:ListaFinal){
                 System.out.println(e);
             }
