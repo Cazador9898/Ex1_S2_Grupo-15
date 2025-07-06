@@ -35,5 +35,19 @@ public class PrimeList extends ArrayList<Integer>{
     return this.size();
     
     }
+    public boolean agregarNumero (int numero) throws IllegalArgumentException {
+    if (isPrime(numero)){
+    this.add(numero);
+    return true;
+   
+    }else{
+    throw new IllegalArgumentException("El numero no es primo");
+    }
+    }
+    public void eliminarPares(){
+    this.removeIf(n -> n%2 ==0);
+    
+    }
+    
     
 }

@@ -25,7 +25,7 @@ public class AgregarPrimos implements Runnable {
         while (!Thread.currentThread().isInterrupted()){
         try{
         lista.add(numero);
-            System.out.println("[hilo} Agregado Automaticamente" + numero);
+            System.out.println("Agregado Automaticamente: " + numero);
         } catch (IllegalArgumentException ignored){
                 
         }

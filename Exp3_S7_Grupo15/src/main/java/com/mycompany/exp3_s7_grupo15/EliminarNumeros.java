@@ -20,7 +20,7 @@ public class EliminarNumeros implements Runnable {
    while (!Thread.currentThread().isInterrupted()){
    if (!lista.isEmpty()){
    int eliminado = lista.remove(0);
-       System.out.println("[hilo] eliminado automaticamente: " + eliminado);
+       System.out.println("eliminado automaticamente: " + eliminado);
    
    }
    try{

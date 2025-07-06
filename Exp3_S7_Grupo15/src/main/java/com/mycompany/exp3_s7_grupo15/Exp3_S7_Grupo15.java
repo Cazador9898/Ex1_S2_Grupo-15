@@ -53,11 +53,11 @@ public class Exp3_S7_Grupo15 {
                     break;
                                     
                 case 2:
-                    System.out.println("Ingrese el numero que desea verificar");
+                    System.out.println("Ingrese el numero que desea agregar");
                     int numeroAgregar = sc.nextInt();
                     sc.nextLine();
                     try{
-                    lista.add(numeroAgregar);
+                    lista.agregarNumero(numeroAgregar);
                         System.out.println("Numero agregado correctamente");
                     
                     } catch (IllegalArgumentException e ){
