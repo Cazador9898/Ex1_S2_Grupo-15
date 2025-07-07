@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class PrimeList extends ArrayList<Integer>{
     
     public boolean isPrime(int n){
-    if(n<=1) return false;
+    if(n <= 1) return false;
     for (int i = 2; i <= Math.sqrt(n); i++){
         if (n % i == 0) return false;
     
@@ -23,14 +23,14 @@ public class PrimeList extends ArrayList<Integer>{
     @Override
     public boolean add (Integer numero){
     
-        if(isPrime(numero)){
-        return super.add(numero);
-        }else{
-        throw new IllegalArgumentException ("El numero no es primo");
-        
+        if (!isPrime(numero)){
+        throw new IllegalArgumentException ("El numero" + numero + "no es primo");
         }
-        
-    }
+        return super.add(numero);
+           }
+    
+    
+    
     public int getPrimesCount(){
     return this.size();
     

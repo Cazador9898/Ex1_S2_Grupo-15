@@ -4,6 +4,8 @@
  */
 package com.mycompany.exp3_s7_grupo15;
 
+import java.util.Scanner;
+
 /**
  *
  * @author wdiazc
@@ -11,34 +13,26 @@ package com.mycompany.exp3_s7_grupo15;
 public class AgregarPrimos implements Runnable {
     
     private PrimeList lista;
-    private int numero = 2;
+    private int numero ;
     
     
     
     public AgregarPrimos (PrimeList lista){
-    this.lista = lista;    
+    this.lista = lista; 
+    this.numero = numero;
     }
     
     
     @Override
     public void run(){
-        while (!Thread.currentThread().isInterrupted()){
-        try{
+     try{
         lista.add(numero);
-            System.out.println("Agregado Automaticamente: " + numero);
-        } catch (IllegalArgumentException ignored){
-                
-        }
-        numero++;
-        try{
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        break;
+         System.out.println("numero agregado: " + numero);
+         }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
         }
                
         }
-    
-    
+        
     }
-    
-}
+   

@@ -4,33 +4,29 @@
  */
 package com.mycompany.exp3_s7_grupo15;
 
+import java.util.Scanner;
+
 /**
  *
  * @author wdiazc
  */
 public class EliminarNumeros implements Runnable {
     private PrimeList lista;
+    private int numero;
 
     public EliminarNumeros(PrimeList lista) {
         this.lista = lista;
+        this.numero = numero;
     }
     
    @Override
    public void run(){
-   while (!Thread.currentThread().isInterrupted()){
-   if (!lista.isEmpty()){
-   int eliminado = lista.remove(0);
-       System.out.println("eliminado automaticamente: " + eliminado);
-   
-   }
-   try{
-   Thread.sleep(20000);   
-   }catch (InterruptedException e){
-   break;
-   }
-   }
-   
-   }
+    if (lista.remove((Integer) numero)) {
+        System.out.println("Numero eliminado: " + numero);
+    } else {
+           System.out.println("El numero no esta en la lista");
+       }
+       }
     
     }
     
