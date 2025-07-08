@@ -58,9 +58,9 @@ public class Exp3_S7_Grupo15 {
                         try {
                             if (lista.isPrime(numeroAgregar)) {
                             lista.add(numeroAgregar);
-                            System.out.println("Numero agregado correctamente: " + numeroAgregar);
+                            System.out.println("\nNumero"+ numeroAgregar +  "agregado correctamente: " );
                         } else {
-                        System.out.println("\nEl numero: " + numeroAgregar + " NO es primo. No se agrego.");
+                        System.out.println("\nEl numero: " + numeroAgregar + "\nNO es primo. No se agrego.");
                           }
                         } catch (IllegalArgumentException e) {
                         System.out.println(" Error: " + e.getMessage());

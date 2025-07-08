@@ -24,7 +24,7 @@ public class PrimeList extends ArrayList<Integer>{
     public boolean add (Integer numero){
     
         if (!isPrime(numero)){
-        throw new IllegalArgumentException ("El numero" + numero + "no es primo");
+        throw new IllegalArgumentException ("\nEl numero" + numero + "no es primo");
         }
         return super.add(numero);
            }
